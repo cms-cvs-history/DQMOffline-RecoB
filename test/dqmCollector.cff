@@ -1,7 +1,12 @@
 
 include "RecoBTag/Configuration/data/RecoBTag.cff" 
-include "DQMOffline/RecoB/data/bTagAnalysisData.cfi"
+
+module bTagCollector = bTagAnalysis from "DQMOffline/RecoB/data/bTagAnalysisData.cfi"
+replace bTagCollector.finalizePlots = true
+replace bTagCollector.finalizeOnly = true
 
 # module execution
-sequence bTagCollector = { bTagAnalysis}
-replace bTagAnalysis.finalize = true
+sequence bTagCollectorSequence  = {bTagCollector}
+
+
+
