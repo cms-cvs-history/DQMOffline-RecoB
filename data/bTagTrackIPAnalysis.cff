@@ -1,0 +1,9 @@
+# TrackIP tag info configuration
+block bTagTrackIPAnalysisBlock = {
+PSet parameters = {
+    int32  nBinEffPur  = 200 
+    double startEffPur = 0.005 
+    double endEffPur   = 1.005
+}
+
+}

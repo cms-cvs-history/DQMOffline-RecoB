@@ -1,0 +1,13 @@
+# SimpleSV jet tag info configuration
+block bTagSimpleSVAnalysisBlock = {
+PSet parameters = {
+    double discriminatorStart = 0
+    double discriminatorEnd   = 8
+    int32  nBinEffPur  = 200
+    double startEffPur = 0.005
+    double endEffPur   = 1.005
+    # the constant b-efficiency for the differential plots versus pt and eta
+    double effBConst = 0.5
+}
+
+}

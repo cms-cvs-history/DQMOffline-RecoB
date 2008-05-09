@@ -1,0 +1,66 @@
+# BTagPerformanceAnalyzer configuration
+include "DQMOffline/RecoB/data/bTagCombinedSVVariables.cff"
+
+#includes added because of block refactoring replacing simple includes by using statements
+include "DQMOffline/RecoB/data/bTagTrackIPAnalysis.cff"
+include "DQMOffline/RecoB/data/bTagCombinedSVAnalysis.cff"
+include "DQMOffline/RecoB/data/bTagTrackCountingAnalysis.cff"
+include "DQMOffline/RecoB/data/bTagTrackProbabilityAnalysis.cff"
+include "DQMOffline/RecoB/data/bTagGenericAnalysis.cff"
+include "DQMOffline/RecoB/data/bTagSimpleSVAnalysis.cff"
+include "DQMOffline/RecoB/data/bTagSoftLeptonAnalysis.cff"
+include "DQMOffline/RecoB/data/bTagCommon.cff"
+
+module bTagAnalysis = BTagPerformanceAnalyzer {
+    VPSet tagConfig = { {
+        InputTag label = impactParameterTagInfos
+        string type = "TrackIP"
+
+        using bTagTrackIPAnalysisBlock 
+
+    } , {
+        InputTag label = combinedSecondaryVertex
+        InputTag ipTagInfos = impactParameterTagInfos
+        InputTag svTagInfos = secondaryVertexTagInfos
+        string type = "GenericMVA"
+        using bTagCombinedSVAnalysisBlock
+    } , {
+        InputTag label = trackCountingHighEffBJetTags
+        using bTagTrackCountingAnalysisBlock
+    } , {
+        InputTag label = trackCountingHighPurBJetTags
+        using bTagTrackCountingAnalysisBlock
+    } , {
+        InputTag label = jetProbabilityBJetTags
+        using bTagProbabilityAnalysisBlock
+    } , {
+        InputTag label = jetBProbabilityBJetTags
+        using bTagProbabilityAnalysisBlock
+    } , {
+        InputTag label = impactParameterMVABJetTags
+        using bTagGenericAnalysisBlock
+    } , {
+        InputTag label = simpleSecondaryVertexBJetTags
+        using bTagSimpleSVAnalysisBlock 
+    } , {
+        InputTag label = combinedSecondaryVertexBJetTags
+        using bTagGenericAnalysisBlock 
+    } , {
+        InputTag label = combinedSecondaryVertexMVABJetTags
+        using bTagGenericAnalysisBlock
+    } , {
+        InputTag label = softMuonBJetTags
+        using bTagSoftLeptonAnalysisBlock 
+    } , {
+        InputTag label = softMuonNoIPBJetTags
+        using bTagSoftLeptonAnalysisBlock 
+    } , {
+        InputTag label = softElectronBJetTags
+        using bTagSoftLeptonAnalysisBlock
+    } }
+
+
+    using bTagCommonBlock
+
+    bool finalizePlots = true
+}

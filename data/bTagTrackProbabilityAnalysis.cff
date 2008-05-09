@@ -1,0 +1,13 @@
+# TrackProbability jetTag configuration
+block bTagProbabilityAnalysisBlock = {
+PSet parameters = {
+    double discriminatorStart = -0.1
+    double discriminatorEnd   =  2.6
+    int32  nBinEffPur  = 200 
+    double startEffPur = 0.005 
+    double endEffPur   = 1.005
+    # the constant b-efficiency for the differential plots versus pt and eta
+    double effBConst = 0.5
+}
+
+}

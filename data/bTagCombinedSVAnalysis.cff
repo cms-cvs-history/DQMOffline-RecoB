@@ -1,0 +1,25 @@
+# combinedSecondaryVertex jet tag computer configuration
+
+block bTagCombinedSVAnalysisBlock = {
+PSet parameters = {
+	string categoryVariable = "vertexCategory"
+
+	VPSet categories = {
+		{
+			using combinedSVRecoVertexVariables
+			using combinedSVPseudoVertexVariables
+			using combinedSVNoVertexVariables
+		}, {
+			using combinedSVRecoVertexVariables
+			using combinedSVPseudoVertexVariables
+			using combinedSVNoVertexVariables
+		}, {
+			using combinedSVPseudoVertexVariables
+			using combinedSVNoVertexVariables
+		}, {
+			using combinedSVNoVertexVariables
+		}
+	}
+}
+
+}
