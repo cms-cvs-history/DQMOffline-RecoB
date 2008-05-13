@@ -63,5 +63,7 @@ module bTagAnalysis = BTagPerformanceAnalyzer {
     using bTagCommonBlock
 
     bool finalizePlots = true
-    bool finalizeOnly = false
+    bool finalizeOnly = false  
+    bool mcPlots = true
+
 }
