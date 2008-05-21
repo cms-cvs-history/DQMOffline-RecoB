@@ -6,6 +6,7 @@ include "DQMOffline/RecoB/data/bTagTrackIPAnalysis.cff"
 include "DQMOffline/RecoB/data/bTagCombinedSVAnalysis.cff"
 include "DQMOffline/RecoB/data/bTagTrackCountingAnalysis.cff"
 include "DQMOffline/RecoB/data/bTagTrackProbabilityAnalysis.cff"
+include "DQMOffline/RecoB/data/bTagTrackBProbabilityAnalysis.cff"
 include "DQMOffline/RecoB/data/bTagGenericAnalysis.cff"
 include "DQMOffline/RecoB/data/bTagSimpleSVAnalysis.cff"
 include "DQMOffline/RecoB/data/bTagSoftLeptonAnalysis.cff"
@@ -35,7 +36,7 @@ module bTagAnalysis = BTagPerformanceAnalyzerOnData {
         using bTagProbabilityAnalysisBlock
     } , {
         InputTag label = jetBProbabilityBJetTags
-        using bTagProbabilityAnalysisBlock
+        using bTagBProbabilityAnalysisBlock
     } , {
         InputTag label = impactParameterMVABJetTags
         using bTagGenericAnalysisBlock
