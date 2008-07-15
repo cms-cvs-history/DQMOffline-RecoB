@@ -32,7 +32,7 @@ double etaMin      = 0.0
 double etaMax      = 2.4
 
 # rec. jet
-double ptRecJetMin = 0.0
+double ptRecJetMin = 30.0
 double ptRecJetMax = 40000.0
 
 # parton pt
