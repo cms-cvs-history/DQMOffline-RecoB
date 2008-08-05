@@ -1,9 +1,0 @@
-
-include "RecoBTag/Configuration/data/RecoBTag.cff" 
-include "DQMOffline/RecoB/data/bTagAnalysisData.cfi"
-
-replace bTagAnalysis.finalizePlots = false
-replace bTagAnalysis.finalizeOnly = false
-
-# Module execution
-sequence bTagPlots = { bTagAnalysis}
